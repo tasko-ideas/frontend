@@ -3,10 +3,11 @@ import { Layout, Space } from "antd";
 import { Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import Navbar from "./components/navbar/Navbar";
-import Login from "./components/Login";
 import ProyectosList from "./components/ProyectosList";
 import Loading from "./components/Loading";
 import CalendarView from "./components/calendarView/calendarView";
+import Welcome from "./components/welcome/Welcome";
+import { RightOutlined } from "@ant-design/icons";
 
 function App() {
   const [user, setUser] = useState(true);
@@ -18,8 +19,8 @@ function App() {
   }, [loading]);
   return (
     <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
-      <Layout style={{ backgroundColor: "rgb(0,21,41)", height: "100vh" }}>
-        {!user && <Login setUser={setUser} setLoading={setLoading} />}
+      <Layout style={{ backgroundColor: "#f0f3f4", height: "100vh" }}>
+        {!user && <Welcome setUser={setUser} setLoading={setLoading} />}
         {user && (
           <>
             <Header
@@ -28,8 +29,8 @@ function App() {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                borderRadius: "0 0 10px 10px",
-                margin: "15px 0",
+                backgroundColor: "#EC6F4F",
+                padding: "0 10px",
               }}
             >
               <Navbar user={user} setUser={setUser} />
@@ -48,6 +49,7 @@ function App() {
                   }}
                 >
                   <ProyectosList />
+                  <RightOutlined />
                 </Sider>
                 <CalendarView />
               </Layout>

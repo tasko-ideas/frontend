@@ -1,3 +1,4 @@
+import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Menu, Space } from "antd";
 
 import React from "react";
@@ -18,11 +19,10 @@ function Navbar({ user, setUser }) {
   ];
   const items2 = [
     {
-      label: "Login",
-      key: "login",
+      label: "Logout",
+      key: "logout",
       onClick: handleclick,
     },
-    { label: "Signup", key: "signup" },
   ];
   return (
     <>
@@ -31,14 +31,14 @@ function Navbar({ user, setUser }) {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          width: "20%",
+          width: "23%",
         }}
       >
         <img
           alt="logo"
-          src="/assets/img/Screenshot_20230728-165122-381.png"
-          width={90}
-          height={90}
+          src="/assets/img/taskoblanco.png"
+          width={150}
+          height={35}
         />
         <Dropdown
           menu={{
@@ -47,15 +47,25 @@ function Navbar({ user, setUser }) {
           arrow
         >
           <p className="menu" style={{ fontSize: "1.2rem" }}>
-            <Space>Proyectos</Space>
+            <Space>
+              Proyectos
+              <DownOutlined />
+            </Space>
           </p>
         </Dropdown>
       </div>
       <Menu
-        style={{ display: "flex", justifyContent: "end", width: "50%" }}
+        style={{
+          display: "flex",
+          justifyContent: "end",
+          width: "50%",
+          fontSize: "16px",
+          fontWeight: "bold",
+          backgroundColor: "#EC6F4F",
+          color: "white",
+        }}
         items={items2}
         mode="horizontal"
-        theme="dark"
       />
     </>
   );

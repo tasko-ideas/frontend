@@ -4,8 +4,8 @@ const Logo = () => {
   return (
     <img
       alt="logo"
-      src="/assets/img/Screenshot_20230728-165122-381.png"
-      width={150}
+      src="/assets/img/taskonaranjo2.png"
+      width={200}
       height={150}
     />
   );

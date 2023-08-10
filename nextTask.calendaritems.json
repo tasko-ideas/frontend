@@ -1,0 +1,700 @@
+[{
+  "_id": {
+    "$oid": "64cbc0b2756952eae8fff676"
+  },
+  "userId": {
+    "$oid": "64cbbc80fee817b2486422bb"
+  },
+  "title": "Limpiar la casa",
+  "description": "Medio temprano",
+  "startDate": "2023-08-02",
+  "itemType": "task",
+  "createdAt": {
+    "$date": "2023-08-03T14:58:58.941Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T14:58:58.941Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cbc0f9756952eae8fff67c"
+  },
+  "userId": {
+    "$oid": "64cbbc80fee817b2486422bb"
+  },
+  "title": "Limpiar la casa",
+  "description": "Medio temprano",
+  "startDate": "2023-08-12",
+  "itemType": "task",
+  "createdAt": {
+    "$date": "2023-08-03T15:00:09.903Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T15:00:09.903Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cbc10d756952eae8fff682"
+  },
+  "userId": {
+    "$oid": "64cbbc80fee817b2486422bb"
+  },
+  "title": "Limpiar la casa",
+  "description": "Medio temprano",
+  "startDate": "2023-09-12",
+  "itemType": "task",
+  "createdAt": {
+    "$date": "2023-08-03T15:00:29.093Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T15:00:29.093Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cbc112756952eae8fff688"
+  },
+  "userId": {
+    "$oid": "64cbbc80fee817b2486422bb"
+  },
+  "title": "Limpiar la casa",
+  "description": "Medio temprano",
+  "startDate": "2022-09-12",
+  "itemType": "task",
+  "createdAt": {
+    "$date": "2023-08-03T15:00:34.989Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T15:00:34.989Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d2c4ebe86e498ee00b9786"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task test",
+  "description": "Description test",
+  "startDate": "23-08-09",
+  "endDate": "24-08-10",
+  "items": [
+    {
+      "$oid": "64d2c4ebe86e498ee00b9784"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-08T22:42:51.446Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T22:42:51.446Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d2cd682173253cc175083b"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task test",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "25-08-10",
+  "items": [
+    {
+      "$oid": "64d2cd672173253cc1750839"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-08T23:19:04.169Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T23:19:04.169Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d2ebfee863bfb6bc860a20"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task test",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "25-08-10",
+  "items": [
+    {
+      "$oid": "64d2ebfee863bfb6bc860a1e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T01:29:34.987Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T01:29:34.987Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3d224a902e2816d3e50f3"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task test",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "25-08-10",
+  "items": [
+    {
+      "$oid": "64d3d223a902e2816d3e50f1"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T17:51:32.103Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T17:51:32.103Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3e4269cee61cbf10935b0"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "25-08-10",
+  "items": [
+    {
+      "$oid": "64d3e4269cee61cbf10935ae"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:08:22.320Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:08:22.320Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3e49f16cd7da1be93d8d8"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task 02",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "25-08-10",
+  "items": [
+    {
+      "$oid": "64d3e49e16cd7da1be93d8d6"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:10:23.106Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:10:23.106Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3e515d69c485ef8e27ca1"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task 03",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "25-08-10",
+  "items": [
+    {
+      "$oid": "64d3e514d69c485ef8e27c9f"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:12:21.028Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:12:21.028Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3e5a22edb447ecedc015e"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "25-08-10",
+  "items": [
+    {
+      "$oid": "64d3e5a22edb447ecedc015c"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:14:42.443Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:14:42.443Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3e68615c15206ea068633"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3e68615c15206ea068631"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:18:30.804Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:18:30.804Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3e746a31b22f8ae75b744"
+  },
+  "userId": {
+    "$oid": "64cbd3a5bef2802b79a96e48"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3e746a31b22f8ae75b742"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:21:42.995Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:21:42.995Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3e923fcc6adb496141d74"
+  },
+  "userId": {
+    "$oid": "64cbd3a5bef2802b79a96e48"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3e923fcc6adb496141d72"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:29:39.983Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:29:39.983Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3e94efcc6adb496141d7d"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3e94efcc6adb496141d7b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:30:22.670Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:30:22.670Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3e9e2b0420af33bd4db1e"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3e9e2b0420af33bd4db1c"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:32:50.902Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:32:50.902Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3ea3f1466cd42a0442660"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3ea3f1466cd42a044265e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:34:23.907Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:34:23.907Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3ead71466cd42a0442667"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3ead71466cd42a0442665"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:36:55.200Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:36:55.200Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3eb2b1466cd42a044266f"
+  },
+  "userId": {
+    "$oid": "64d29cae8b2e38126368a5e0"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3eb2b1466cd42a044266d"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:38:19.267Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:38:19.267Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3eb801466cd42a0442679"
+  },
+  "userId": {
+    "$oid": "64d3eb721466cd42a0442672"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3eb801466cd42a0442677"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:39:44.735Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:39:44.735Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3ebfbabac08462cecf20b"
+  },
+  "userId": {
+    "$oid": "64d3eb721466cd42a0442672"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3ebfbabac08462cecf209"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:41:47.471Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:41:47.471Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3ec369b0601d18969f18d"
+  },
+  "userId": {
+    "$oid": "64d3eb721466cd42a0442672"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3ec369b0601d18969f18b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:42:46.342Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:42:46.342Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3ec9b0802245db2906d61"
+  },
+  "userId": {
+    "$oid": "64d3eb721466cd42a0442672"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3ec9a0802245db2906d5f"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:44:27.114Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:44:27.114Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3ecb40802245db2906d69"
+  },
+  "userId": {
+    "$oid": "64d3eb721466cd42a0442672"
+  },
+  "title": "Task 02",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3ecb40802245db2906d67"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:44:52.532Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:44:52.532Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3ed0b0802245db2906d71"
+  },
+  "userId": {
+    "$oid": "64d3eb721466cd42a0442672"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3ed0b0802245db2906d6f"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T19:46:19.284Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T19:46:19.284Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3f138b9417535c07bf4ce"
+  },
+  "userId": {
+    "$oid": "64d3eb721466cd42a0442672"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3f138b9417535c07bf4cc"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T20:04:08.950Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T20:04:08.950Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3fd8999d687eb394a1f5f"
+  },
+  "userId": {
+    "$oid": "64d3eb721466cd42a0442672"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3fd8999d687eb394a1f5d"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T20:56:41.494Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T20:56:41.494Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d3feb5d55afb0154de7f45"
+  },
+  "userId": {
+    "$oid": "64d3eb721466cd42a0442672"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d3feb5d55afb0154de7f43"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T21:01:41.198Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T21:01:41.198Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d40091811bcf86d06d316c"
+  },
+  "userId": {
+    "$oid": "64d3eb721466cd42a0442672"
+  },
+  "title": "Task 01",
+  "description": "Description test",
+  "startDate": "22-08-09",
+  "endDate": "22-08-10",
+  "items": [
+    {
+      "$oid": "64d40091811bcf86d06d316a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-09T21:09:37.417Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-09T21:09:37.417Z"
+  },
+  "__v": 0
+}]

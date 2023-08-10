@@ -7,7 +7,7 @@ const Loading = () => {
       style={{
         padding: "auto 0",
         textAlign: "center",
-        color: "white",
+        color: "#056BF2",
         fontSize: "2rem",
       }}
     >

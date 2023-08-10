@@ -65,7 +65,11 @@ body {
 }
 
 .menu:hover {
-  color: #ec6f4f;
+  cursor: pointer;
   transition: all 300ms;
 
+}
+
+.loginButton:hover {
+  background-color: #3D8BF2;
 }
