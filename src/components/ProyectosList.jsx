@@ -1,38 +1,62 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Content } from "antd/es/layout/layout";
-import { Button, ConfigProvider } from "antd";
+import { Menu, Progress } from "antd";
 
 const ProyectosList = () => {
-  const Tableros = ["Tablero 1", "Tablero 2", "Tablero 3", "Tablero 4"];
+  useEffect(() => {
+    document.title = "Tasko - Plan y Control - Calendario";
+  }, []);
+  const Tableros = [
+    { label: "Tablero1", key: "t1" },
+    { label: "Tablero2", key: "t2" },
+    { label: "Tablero3", key: "t3" },
+  ];
+  const items = [
+    {
+      label: "Proyecto1",
+      key: "1",
+      children: Tableros,
+    },
+    {
+      label: "Proyecto2",
+      key: "2",
+      children: [],
+    },
+  ];
+  const dashboard = [
+    {
+      label: "Dashboard",
+      key: "A1",
+      children: items,
+    },
+  ];
   return (
-    <div>
-      <h1 style={{ fontSize: "1.4rem" }}>Tableros</h1>
-      <Content
+    <Content
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        position: "relative",
+        height: "100vh",
+      }}
+    >
+      <Menu
+        defaultSelectedKeys={["A1"]}
+        defaultOpenKeys={["t1"]}
+        mode="inline"
+        items={dashboard}
+      />
+      <Progress
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-around",
-          flexWrap: "wrap",
-          gap: "20px",
-          margin: "5px",
+          padding: "10px",
+          position: "sticky",
+          bottom: "20px",
         }}
-      >
-        {Tableros.map((tablero) => (
-          <ConfigProvider
-            theme={{
-              token: {
-                colorPrimary: "#ec6f4f",
-                colorBgContainer: "#f6ffed",
-              },
-            }}
-            key={tablero.indexOf}
-          >
-            <Button block>{tablero}</Button>
-          </ConfigProvider>
-        ))}
-      </Content>
-    </div>
+        percent={50}
+      />
+    </Content>
     /* <ProyectoCard key={tablero.indexOf} nombre={tablero} /> */
   );
 };
