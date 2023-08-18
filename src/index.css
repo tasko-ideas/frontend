@@ -86,17 +86,9 @@ body {
   line-height: 1.2;
 }
 
-.ant-badge-status-text {
-  word-wrap: break-word;
-  text-overflow: ellipsis;
-}
 
-.events .ant-badge-status {
-  width: 100%;
-  overflow: hidden;
-  font-size: 8px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.ant-picker-cell-selected {
+  background-color: #3D8BF2;
 }
 
 .notes-month {

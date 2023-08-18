@@ -1,4 +1,4 @@
-import { Calendar } from "antd";
+import { Badge, Calendar } from "antd";
 import React, { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import getTareas from "../../../services/getTareas";
@@ -44,8 +44,10 @@ const CalendarView = ({ toggle, selectFecha }) => {
       <ul className="events">
         {listTareas.map((item) => (
           <li key={item._id?.$oid}>
-            {/* <Badge text={item.title} /> */}
-            {item.title}
+            <span>
+              <Badge dot status="success" />
+              {item.title}
+            </span>
           </li>
         ))}
       </ul>
