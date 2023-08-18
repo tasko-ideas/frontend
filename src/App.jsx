@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Layout, Space } from "antd";
 import { Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
+import { RightOutlined } from "@ant-design/icons";
 import Navbar from "./components/navbar/Navbar";
 import ProyectosList from "./components/ProyectosList";
 import Loading from "./components/Loading";
 import CalendarView from "./components/calendarView/calendarView";
 import Welcome from "./components/welcome/Welcome";
-import { RightOutlined } from "@ant-design/icons";
 
 function App() {
   const [user, setUser] = useState(true);
