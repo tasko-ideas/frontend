@@ -1,25 +1,22 @@
-import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Menu, Space } from "antd";
+import { BellOutlined, LogoutOutlined } from "@ant-design/icons";
+import { Menu } from "antd";
 
 import React from "react";
+import User from "./User";
 
 function Navbar({ user, setUser }) {
   const handleclick = () => {
     setUser(!user);
   };
-  const items = [
-    {
-      label: "Proyecto1",
-      key: "1",
-    },
-    {
-      label: "Proyecto2",
-      key: "2",
-    },
-  ];
+
   const items2 = [
     {
-      label: "Logout",
+      label: <BellOutlined style={{ fontSize: "20px" }} />,
+      key: "notification",
+    },
+    { label: <User />, key: "user" },
+    {
+      label: <LogoutOutlined />,
       key: "logout",
       onClick: handleclick,
     },
@@ -40,19 +37,6 @@ function Navbar({ user, setUser }) {
           width={150}
           height={35}
         />
-        <Dropdown
-          menu={{
-            items,
-          }}
-          arrow
-        >
-          <p className="menu" style={{ fontSize: "1.2rem" }}>
-            <Space>
-              Proyectos
-              <DownOutlined />
-            </Space>
-          </p>
-        </Dropdown>
       </div>
       <Menu
         style={{

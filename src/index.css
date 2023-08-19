@@ -21,9 +21,9 @@ body {
   padding: 10px;
 }
 
-:where(.css-dev-only-do-not-override-txh9fw).ant-picker-calendar.ant-picker-calendar-full .ant-picker-calendar-date-content {
-  height: 50px;
-}
+/* :where(.css-dev-only-do-not-override-txh9fw).ant-picker-calendar.ant-picker-calendar-full .ant-picker-calendar-date-content {
+  height: 20px;
+} */
 
 .Calendario:hover {
   box-shadow: 10px 11px 15px -3px rgba(255, 255, 255, 1);
@@ -72,4 +72,38 @@ body {
 
 .loginButton:hover {
   background-color: #3D8BF2;
+}
+
+.ant-picker-content td {
+  overflow: auto;
+  white-space: normal;
+}
+
+.events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.2;
+}
+
+
+.ant-picker-cell-selected {
+  background-color: #3D8BF2;
+}
+
+.notes-month {
+  font-size: 12px;
+  text-align: center;
+}
+
+.notes-month section {
+  font-size: 12px;
+}
+
+.Normal {
+  color: #3D8BF2 !important
+}
+
+.Prioritario {
+  color: firebrick !important;
 }

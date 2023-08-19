@@ -1,5 +1,8 @@
 {
   "name": "tasko",
+  "eslintConfig": {
+    "extends": "airbnb"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,9 +14,10 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.5",
-    "@tanstack/react-query": "^4.32.6",
+    "@tanstack/react-query": "^4.33.0",
     "antd": "^5.7.3",
     "axios": "^1.4.0",
+    "dayjs": "^1.11.9",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-standard": "^17.1.0",
     "json-server": "^0.17.3",
@@ -25,6 +29,7 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react-swc": "^3.3.2",
+    "dayjs": "^1.11.9",
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
