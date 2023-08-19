@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useMutation } from "@tanstack/react-query";
 import {
@@ -17,8 +18,9 @@ const Login = ({ setLoading, setUser }) => {
   const logueo = useMutation({
     mutationFn: loguear,
     onSuccess: (user) => {
-      localStorage.setItem('USER', JSON.stringify(user));
-      setUser(user);
+      const dataUser = user.data._doc;
+      localStorage.setItem('USER', JSON.stringify(dataUser));
+      setUser(dataUser);
       setLoading(true);
     },
     onError: (err) => {

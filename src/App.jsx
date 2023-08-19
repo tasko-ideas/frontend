@@ -4,6 +4,10 @@ import { Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import { RightOutlined } from "@ant-design/icons";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+/* import { persistQueryClient } from "@tanstack/react-query-persist-client";
+import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
+
+import { compress, decompress } from "lz-string"; */
 import Navbar from "./components/navbar/Navbar";
 import ProyectosList from "./components/ProyectosList";
 import Loading from "./components/Loading";
@@ -16,14 +20,28 @@ function App() {
 
   const queryClient = new QueryClient();
 
+  // revisar documentacion de persistentQueryClient: https://tanstack.com/query/v4/docs/react/plugins/createSyncStoragePersister#serialize-and-deserialize-options
+  /* {
+    defaultOptions: { queries: { staleTime: Infinity } },
+  } */
+  /* persistQueryClient({
+    queryClient: queryClient,
+    persister: createSyncStoragePersister({
+      storage: window.localStorage,
+      serialize: (data) => compress(JSON.stringify(data)),
+      deserialize: (data) => JSON.parse(decompress(data)),
+    }),
+    maxAge: Infinity,
+  });
+ */
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
   }, [loading]);
   return (
-    <QueryClientProvider client={queryClient}>
-      <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
+    <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
+      <QueryClientProvider client={queryClient}>
         <Layout style={{ backgroundColor: "#f0f3f4", height: "100vh" }}>
           {!user && <Welcome setUser={setUser} setLoading={setLoading} />}
           {user && (
@@ -62,8 +80,8 @@ function App() {
             </>
           )}
         </Layout>
-      </Space>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </Space>
   );
 }
 
