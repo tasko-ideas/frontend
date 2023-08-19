@@ -1,32 +1,76 @@
+/* eslint-disable no-underscore-dangle */
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, ConfigProvider, Form, Input } from "antd";
-import React from "react";
+import { useMutation } from "@tanstack/react-query";
+import {
+  Button, Checkbox, ConfigProvider, Form, Input,
+} from "antd";
+import React, { /* useEffect, */ useState } from "react";
+import { loguear } from "../../services/servicesUserLogin";
+import { USER_LOGIN } from "../../constants/localStorageConstants";
 
 const Login = ({ setLoading, setUser }) => {
-  const login = (e) => {
+  const [saveUserLogin, setSaveUserLogin] = useState(false);
+  /* const login = (e) => {
     e.preventDefault();
-    setUser(true);
+    /* setUser(true);
     setLoading(true);
+  }; */
+  const logueo = useMutation({
+    mutationFn: loguear,
+    onSuccess: (user) => {
+      const dataUser = user.data._doc;
+      localStorage.setItem('USER', JSON.stringify(dataUser));
+      setUser(dataUser);
+      setLoading(true);
+    },
+    onError: (err) => {
+      console.error(err);
+    },
+  });
+
+  const handlerCheck = () => {
+    setSaveUserLogin(!saveUserLogin);
+  };
+  // agregar useEffect para recuperar info del login si existe
+  /* useEffect(() => {
+  }) */
+  const [form] = Form.useForm();
+  const onFinish = (loginData) => {
+    console.log("Received values of form: ", loginData);
+    if (saveUserLogin) {
+      localStorage.setItem(USER_LOGIN, JSON.stringify(loginData));
+    }
+    // completar funcion de logueo
+    logueo.mutate(loginData);
   };
   return (
-    <Form style={{ margin: "20px auto" }}>
+    <Form
+      form={form}
+      name="login"
+      onFinish={onFinish}
+      style={{ margin: "20px auto" }}
+    >
       <Form.Item
-        name="username"
+        name="email"
         rules={[
           {
+            type: "email",
+            message: "The input is not valid E-mail!",
+          },
+          {
             required: true,
-            message: "Por favor ingresa tu nombre de usuario",
+            message: "Please input your E-mail!",
           },
         ]}
       >
         <Input
-          prefix={
+          prefix={(
             <UserOutlined
               style={{ color: "rgb(0,100,255)" }}
               className="site-form-item-icon"
             />
-          }
-          placeholder="Username"
+          )}
+          placeholder="E-mail"
           autoFocus
         />
       </Form.Item>
@@ -40,12 +84,12 @@ const Login = ({ setLoading, setUser }) => {
         ]}
       >
         <Input
-          prefix={
+          prefix={(
             <LockOutlined
               style={{ color: "rgb(0,100,255)" }}
               className="site-form-item-icon"
             />
-          }
+          )}
           placeholder="Password"
           type="password"
           autoFocus
@@ -53,7 +97,7 @@ const Login = ({ setLoading, setUser }) => {
       </Form.Item>
       <Form.Item>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Checkbox style={{ width: "50%", fontSize: "16px" }}>
+          <Checkbox onChange={handlerCheck} checked={saveUserLogin} style={{ width: "50%", fontSize: "16px" }}>
             Remember me
           </Checkbox>
           <a
@@ -81,8 +125,8 @@ const Login = ({ setLoading, setUser }) => {
               color: "white",
               padding: "0px 60px",
             }}
-            htmlType="submit"
-            onClick={login}
+            htmlType="submit" /*
+            onClick={login} */
             size="large"
           >
             Login
