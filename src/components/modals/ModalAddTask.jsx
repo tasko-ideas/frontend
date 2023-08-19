@@ -1,22 +1,22 @@
 import { CloseOutlined } from "@ant-design/icons";
 // eslint-disable-next-line object-curly-newline
-import { Button, DatePicker, Form, Input } from "antd";
+import { Button, DatePicker, Form, Input, Select } from "antd";
 import { useForm } from "antd/es/form/Form";
 import React from "react";
-import setTareas from "../../services/setTareas";
+import { useMutation } from "@tanstack/react-query";
+import { setTareas } from "../../services/serviceTareas";
 
 // eslint-disable-next-line object-curly-newline
 const AddTask = ({ visible, hideModal, fechaTask, setFechaTask }) => {
   const { RangePicker } = DatePicker;
   const [form] = useForm();
+  const mutation = useMutation({ mutationFn: (tarea) => setTareas(tarea) });
   const { TextArea } = Input;
   const handleFechaChange = (newFecha) => {
     setFechaTask(newFecha);
   };
-  console.log(fechaTask);
   const handleSubmit = () => {
-    setTareas(form);
-    form.resetFields();
+    mutation.mutate(form);
     hideModal();
   };
 
@@ -72,11 +72,7 @@ const AddTask = ({ visible, hideModal, fechaTask, setFechaTask }) => {
           name="startDate"
           style={{ display: "inline-block" }}
         >
-          <RangePicker
-            onChange={handleFechaChange}
-            value={fechaTask}
-            defaultPickerValue={[fechaTask]}
-          />
+          <RangePicker onChange={handleFechaChange} value={fechaTask} />
         </Form.Item>
 
         <Form.Item label="Titulo" name="tarea">
@@ -84,6 +80,24 @@ const AddTask = ({ visible, hideModal, fechaTask, setFechaTask }) => {
         </Form.Item>
         <Form.Item label="Descripción" name="tareaDesc">
           <TextArea rows={4} />
+        </Form.Item>
+        <Form.Item label="Prioridad" name="prioridad">
+          <Select
+            defaultValue="#3D8BF2"
+            style={{ width: "100%" }}
+            options={[
+              {
+                value: "#3D8BF2",
+                label: "Normal",
+                className: "Normal",
+              },
+              {
+                value: "firebrick",
+                label: "Prioritario",
+                className: "Prioritario",
+              },
+            ]}
+          />
         </Form.Item>
         <Form.Item style={{ display: "flex", justifyContent: "flex-end" }}>
           <Button type="primary" htmlType="submit">

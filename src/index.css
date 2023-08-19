@@ -99,3 +99,11 @@ body {
 .notes-month section {
   font-size: 12px;
 }
+
+.Normal {
+  color: #3D8BF2 !important
+}
+
+.Prioritario {
+  color: firebrick !important;
+}

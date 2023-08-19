@@ -1,22 +1,15 @@
+/* eslint-disable no-underscore-dangle */
 import { Badge, Calendar } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import dayjs from "dayjs";
-import getTareas from "../../../services/getTareas";
 
-const CalendarView = ({ toggle, selectFecha }) => {
-  const [datos, setDatos] = useState([]);
+const CalendarView = ({ datos, selectFecha }) => {
+  // const [datos, setDatos] = useState([]);
   const [fecha, setFecha] = useState(() => dayjs("2023-08-14"));
   const onSelect = (newValue) => {
     setFecha(newValue);
     selectFecha(newValue);
   };
-  const fetchData = async () => {
-    const respuesta = await getTareas();
-    setDatos(respuesta.data);
-  };
-  useEffect(() => {
-    fetchData();
-  }, [toggle]);
   const getMonthData = (value) => {
     if (value.month() === 8) {
       return datos.length;
@@ -40,12 +33,13 @@ const CalendarView = ({ toggle, selectFecha }) => {
     const listTareas = datos.filter((tarea) => {
       return tarea.startDate === `${value.year()}-${mes}-${dia}`;
     });
+
     return (
-      <ul className="events">
+      <ul className="events" key={listTareas.$oid || listTareas.id}>
         {listTareas.map((item) => (
           <li key={item._id?.$oid}>
             <span>
-              <Badge dot status="success" />
+              <Badge dot color={item.priority ? item.priority : "blue"} />
               {item.title}
             </span>
           </li>
