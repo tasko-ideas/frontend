@@ -1,9 +1,10 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { useMutation } from "@tanstack/react-query";
 import {
   Button, Checkbox, ConfigProvider, Form, Input,
 } from "antd";
 import React, { /* useEffect, */ useState } from "react";
-import Users from "../../services/servicesUserLogin";
+import { loguear } from "../../services/servicesUserLogin";
 import { USER_LOGIN } from "../../constants/localStorageConstants";
 
 const Login = ({ setLoading, setUser }) => {
@@ -13,6 +14,18 @@ const Login = ({ setLoading, setUser }) => {
     /* setUser(true);
     setLoading(true);
   }; */
+  const logueo = useMutation({
+    mutationFn: loguear,
+    onSuccess: (user) => {
+      localStorage.setItem('USER', JSON.stringify(user));
+      setUser(user);
+      setLoading(true);
+    },
+    onError: (err) => {
+      console.error(err);
+    },
+  });
+
   const handlerCheck = () => {
     setSaveUserLogin(!saveUserLogin);
   };
@@ -26,9 +39,7 @@ const Login = ({ setLoading, setUser }) => {
       localStorage.setItem(USER_LOGIN, JSON.stringify(loginData));
     }
     // completar funcion de logueo
-    setUser(true);
-    setLoading(true);
-    Users.loguear(loginData, setUser);
+    logueo.mutate(loginData);
   };
   return (
     <Form

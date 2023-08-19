@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 import {
   Button,
   Form,
   Input,
 } from "antd";
-import Users from "../../services/servicesUserLogin";
+import { createUser } from "../../services/servicesUserLogin";
+/* import Users from "../../services/servicesUserLogin"; */
 
 const formItemLayout = {
   labelCol: {
@@ -38,9 +40,18 @@ const tailFormItemLayout = {
 };
 const Register = () => {
   const [form] = Form.useForm();
+  const registrar = useMutation({
+    mutationFn: createUser,
+    onSuccess: (user) => {
+      console.log(user);
+    },
+    onError: (err) => {
+      console.error(err);
+    },
+  });
   const onFinish = (newUser) => {
-    console.log("Received values of form: ", newUser);
-    Users.createUser.mutate(newUser);
+    console.log(newUser);
+    registrar.mutate(newUser);
   };
 
   return (
@@ -105,7 +116,7 @@ const Register = () => {
       </Form.Item>
 
       <Form.Item
-        name="confirm"
+        name="passwordCheck"
         label="Confirm Password"
         dependencies={["password"]}
         hasFeedback
