@@ -1,8 +1,8 @@
 import React from "react";
 import { Menu } from "antd";
 
-const DropdownMenu = ({ visible, hideModal, showTask }) => {
-  const handleClickTask = () => {
+const DropdownMenu = ({ visible, hideModal, showTask, items }) => {
+  const handleClickTask = ({ key }) => {
     showTask();
     hideModal();
   };
@@ -25,13 +25,9 @@ const DropdownMenu = ({ visible, hideModal, showTask }) => {
         fontWeight: "bold",
         boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
       }}
-    >
-      <Menu.Item key="option1" onClick={handleClickTask}>
-        Crear tarea
-      </Menu.Item>
-      <Menu.Item key="option2">Crear tablero</Menu.Item>
-      <Menu.Item key="option3">Crear proyecto</Menu.Item>
-    </Menu>
+      items={items}
+      onClick={handleClickTask}
+    />
   );
 };
 

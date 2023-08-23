@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Content } from "antd/es/layout/layout";
 import { Menu, Progress } from "antd";
+import { DashboardOutlined } from "@ant-design/icons";
 
 const ProyectosList = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const ProyectosList = () => {
   ];
   const dashboard = [
     {
+      icon: <DashboardOutlined />,
       label: "Dashboard",
       key: "A1",
       children: items,

@@ -1,9 +1,9 @@
 import { Content } from "antd/es/layout/layout";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FloatButton } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import dayjs from "dayjs";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import CalendarView from "./calendarView/calendarView";
 import ViewSelector from "./viewSelector";
 import DropdownMenu from "../modals/ModalMenu";
@@ -12,18 +12,21 @@ import AddTask from "../modals/ModalAddTask";
 import { getTareas } from "../../services/serviceTareas";
 
 const ProyectosView = () => {
-  const queryClient = useQueryClient();
-  const query = useQuery({ queryKey: ["tareas"], queryFn: getTareas });
+  const items = [
+    { key: "tarea", label: "Crear tarea" },
+    { key: "tablero", label: "Crear tablero" },
+    { key: "proyecto", label: "Crear proyecto" },
+  ];
   const [fechaTask, setFechaTask] = useState(dayjs());
   const [view, setView] = useState("General");
   const { isShowing, toggle } = useModal();
   const { isShowing: addTask, toggle: toggleTask } = useModal();
+  const query = useQuery({ queryKey: ["tareas"], queryFn: getTareas }, [
+    addTask,
+  ]);
   const handleChange = (e) => {
     setView(e.target.value);
   };
-  useEffect(() => {
-    queryClient.invalidateQueries({ queryKey: ["tareas"] });
-  }, [addTask]);
   return (
     <Content>
       <ViewSelector view={view} handleChange={handleChange} />
@@ -48,6 +51,7 @@ const ProyectosView = () => {
         visible={isShowing}
         hideModal={toggle}
         showTask={toggleTask}
+        items={items}
       />
       <AddTask
         visible={addTask}

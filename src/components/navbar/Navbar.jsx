@@ -14,11 +14,17 @@ function Navbar({ user, setUser }) {
       label: <BellOutlined style={{ fontSize: "20px" }} />,
       key: "notification",
     },
-    { label: <User />, key: "user" },
     {
-      label: <LogoutOutlined />,
-      key: "logout",
-      onClick: handleclick,
+      label: <User />,
+      key: "user",
+      children: [
+        {
+          label: "Cerrar Sesión",
+          icon: <LogoutOutlined />,
+          key: "logout",
+          onClick: handleclick,
+        },
+      ],
     },
   ];
   return (
@@ -34,8 +40,8 @@ function Navbar({ user, setUser }) {
         <img
           alt="logo"
           src="/assets/img/taskoblanco.png"
-          width={150}
-          height={35}
+          width="120px"
+          height="27px"
         />
       </div>
       <Menu
@@ -43,10 +49,11 @@ function Navbar({ user, setUser }) {
           display: "flex",
           justifyContent: "end",
           width: "50%",
-          fontSize: "16px",
-          fontWeight: "bold",
+          fontSize: "14px",
           backgroundColor: "#EC6F4F",
           color: "white",
+          border: "none",
+          lineHeight: "22px",
         }}
         items={items2}
         mode="horizontal"

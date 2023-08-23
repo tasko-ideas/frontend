@@ -1,9 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useMutation } from "@tanstack/react-query";
-import {
-  Button, Checkbox, ConfigProvider, Form, Input,
-} from "antd";
+import { Button, Checkbox, ConfigProvider, Form, Input } from "antd";
 import React, { /* useEffect, */ useState } from "react";
 import { loguear } from "../../services/servicesUserLogin";
 import { USER_LOGIN } from "../../constants/localStorageConstants";
@@ -19,7 +17,7 @@ const Login = ({ setLoading, setUser }) => {
     mutationFn: loguear,
     onSuccess: (user) => {
       const dataUser = user.data._doc;
-      localStorage.setItem('USER', JSON.stringify(dataUser));
+      localStorage.setItem("USER", JSON.stringify(dataUser));
       setUser(dataUser);
       setLoading(true);
     },
@@ -64,12 +62,12 @@ const Login = ({ setLoading, setUser }) => {
         ]}
       >
         <Input
-          prefix={(
+          prefix={
             <UserOutlined
               style={{ color: "rgb(0,100,255)" }}
               className="site-form-item-icon"
             />
-          )}
+          }
           placeholder="E-mail"
           autoFocus
         />
@@ -83,13 +81,13 @@ const Login = ({ setLoading, setUser }) => {
           },
         ]}
       >
-        <Input
-          prefix={(
+        <Input.Password
+          prefix={
             <LockOutlined
               style={{ color: "rgb(0,100,255)" }}
               className="site-form-item-icon"
             />
-          )}
+          }
           placeholder="Password"
           type="password"
           autoFocus
@@ -97,7 +95,11 @@ const Login = ({ setLoading, setUser }) => {
       </Form.Item>
       <Form.Item>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Checkbox onChange={handlerCheck} checked={saveUserLogin} style={{ width: "50%", fontSize: "16px" }}>
+          <Checkbox
+            onChange={handlerCheck}
+            checked={saveUserLogin}
+            style={{ width: "50%", fontSize: "16px" }}
+          >
             Remember me
           </Checkbox>
           <a

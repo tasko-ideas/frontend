@@ -27,6 +27,7 @@ const Welcome = ({ setUser, setLoading }) => {
         flexDirection: "column",
         alignItems: "center",
         paddingTop: "5rem",
+        height: "100vh",
       }}
     >
       <Logo />

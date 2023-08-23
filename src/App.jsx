@@ -15,13 +15,10 @@ import Loading from "./components/Loading";
 import Welcome from "./components/welcome/Welcome";
 import ProyectosView from "./components/Views/ProyectosView";
 
-
 function App() {
   const queryClient = new QueryClient();
   const [user, setUser] = useState(true);
   const [loading, setLoading] = useState(false);
-
-  const queryClient = new QueryClient();
 
   // revisar documentacion de persistentQueryClient: https://tanstack.com/query/v4/docs/react/plugins/createSyncStoragePersister#serialize-and-deserialize-options
   /* {
@@ -45,9 +42,7 @@ function App() {
   return (
     <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
       <QueryClientProvider client={queryClient}>
-
-        <Layout style={{ backgroundColor: "#f0f3f4" }}>
-
+        <Layout style={{ backgroundColor: "#f0f3f4", height: "100%" }}>
           {!user && <Welcome setUser={setUser} setLoading={setLoading} />}
           {user && (
             <>
@@ -58,7 +53,7 @@ function App() {
                   justifyContent: "space-between",
                   alignItems: "center",
                   backgroundColor: "#EC6F4F",
-                  padding: "0 10px",
+                  padding: "0 16px",
                   height: "48px",
                 }}
               >
