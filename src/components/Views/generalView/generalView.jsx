@@ -13,9 +13,9 @@ const GeneralView = () => {
         lineHeight: "22px",
       }}
     >
-      <Column />
-      <Column />
-      <Column />
+      <Column title="Lista de tareas" />
+      <Column title="En proceso" />
+      <Column title="Hecho" />
     </div>
   );
 };
