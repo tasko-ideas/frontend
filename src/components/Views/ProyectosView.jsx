@@ -10,6 +10,7 @@ import DropdownMenu from "../modals/ModalMenu";
 import useModal from "../../hooks/useModals";
 import AddTask from "../modals/ModalAddTask";
 import { getTareas } from "../../services/serviceTareas";
+import GeneralView from "./generalView/generalView";
 
 const ProyectosView = () => {
   const items = [
@@ -30,6 +31,7 @@ const ProyectosView = () => {
   return (
     <Content>
       <ViewSelector view={view} handleChange={handleChange} />
+      {view === "General" && <GeneralView />}
       {view === "Calendar" && (
         <CalendarView
           datos={query.data.data}
