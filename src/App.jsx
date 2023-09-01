@@ -18,7 +18,7 @@ import ProyectosView from "./components/Views/ProyectosView";
 function App() {
   const queryClient = new QueryClient();
   const [user, setUser] = useState(true);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // revisar documentacion de persistentQueryClient: https://tanstack.com/query/v4/docs/react/plugins/createSyncStoragePersister#serialize-and-deserialize-options
   /* {
@@ -34,11 +34,11 @@ function App() {
     maxAge: Infinity,
   });
  */
-  /* useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }, [loading]); */
+  }, [loading]);
   return (
     <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
       <QueryClientProvider client={queryClient}>
