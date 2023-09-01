@@ -18,7 +18,7 @@ import ProyectosView from "./components/Views/ProyectosView";
 function App() {
   const queryClient = new QueryClient();
   const [user, setUser] = useState(true);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // revisar documentacion de persistentQueryClient: https://tanstack.com/query/v4/docs/react/plugins/createSyncStoragePersister#serialize-and-deserialize-options
   /* {
@@ -34,11 +34,11 @@ function App() {
     maxAge: Infinity,
   });
  */
-  useEffect(() => {
+  /* useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }, [loading]);
+  }, [loading]); */
   return (
     <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
       <QueryClientProvider client={queryClient}>
@@ -59,25 +59,27 @@ function App() {
               >
                 <Navbar user={user} setUser={setUser} />
               </Header>
-              {loading ? (
-                <Loading />
-              ) : (
-                <Layout hasSider>
-                  <Sider
-                    style={{
-                      textAlign: "center",
-                      lineHeight: "60px",
-                      color: "#fff",
-                      backgroundColor: "white",
-                      boxShadow: "14px 4px 14px 6px rgba(245,245,245,0.57)",
-                    }}
-                  >
-                    <ProyectosList />
-                    <RightOutlined />
-                  </Sider>
-                  <ProyectosView />
-                </Layout>
-              )}
+              <Layout hasSider>
+                {loading ? (
+                  <Loading />
+                ) : (
+                  <>
+                    <Sider
+                      style={{
+                        textAlign: "center",
+                        lineHeight: "60px",
+                        color: "#fff",
+                        backgroundColor: "white",
+                        boxShadow: "14px 4px 14px 6px rgba(245,245,245,0.57)",
+                      }}
+                    >
+                      <ProyectosList />
+                      <RightOutlined />
+                    </Sider>
+                    <ProyectosView />
+                  </>
+                )}
+              </Layout>
             </>
           )}
         </Layout>
