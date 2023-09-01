@@ -1,9 +1,6 @@
 import React from "react";
 import { Content } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
-import {
-  Divider, Form, Radio, Skeleton, Space, Switch,
-} from 'antd';
 import { RightOutlined } from "@ant-design/icons";
 import ProyectosList from "./ProyectosList";
 import ViewSelector from "./Views/viewSelector";

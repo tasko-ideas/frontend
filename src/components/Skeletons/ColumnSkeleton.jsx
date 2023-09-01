@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  Divider, Form, Radio, Skeleton, Space, Switch,
-} from "antd";
+import { Skeleton } from "antd";
 
 function ColumnSkeleton() {
   return (
