@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 
-const Buttons = ({ label, htmlType }) => {
+const Buttons = ({ label, htmlType, onClick }) => {
   return (
     <Button
       type="primary"
@@ -9,10 +9,11 @@ const Buttons = ({ label, htmlType }) => {
         margin: "10px 0",
         width: "130px",
         minHeight: "37px",
-        borderRadius: "10px",
+        borderRadius: "5px",
         boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
         backgroundColor: "#EC6F4F",
       }}
+      onClick={onClick}
       htmlType={htmlType}
       className="tarea-boton"
     >

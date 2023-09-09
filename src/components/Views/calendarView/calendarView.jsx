@@ -1,11 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 import { Badge, Calendar } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import dayjs from "dayjs";
 
 const CalendarView = ({ datos, selectFecha }) => {
   // const [datos, setDatos] = useState([]);
   const [fecha, setFecha] = useState(() => dayjs("2023-08-14"));
+  useEffect(() => {
+    document.title = "Tasko - Plan y Control - Calendario";
+  }, []);
   const onSelect = (newValue) => {
     setFecha(newValue);
     selectFecha(newValue);
