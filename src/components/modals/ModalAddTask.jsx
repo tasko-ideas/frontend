@@ -2,17 +2,18 @@ import { CloseOutlined } from "@ant-design/icons";
 // eslint-disable-next-line object-curly-newline
 import { DatePicker, Form, Input, Select } from "antd";
 import { useForm } from "antd/es/form/Form";
-import React from "react";
+import React, { useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { setTareas } from "../../services/serviceTareas";
 import Buttons from "../Buttons";
 
 // eslint-disable-next-line object-curly-newline
-const AddTask = ({ visible, hideModal, fechaTask, setFechaTask }) => {
+const AddTask = ({ title, visible, hideModal, fechaTask, setFechaTask }) => {
   const { RangePicker } = DatePicker;
   const [form] = useForm();
   const mutation = useMutation({ mutationFn: (tarea) => setTareas(tarea) });
   const { TextArea } = Input;
+  console.log(title);
   const handleFechaChange = (newFecha) => {
     setFechaTask(newFecha);
   };
@@ -20,6 +21,9 @@ const AddTask = ({ visible, hideModal, fechaTask, setFechaTask }) => {
     mutation.mutate(form);
     hideModal();
   };
+  useEffect(() => {
+    form.setFieldValue("tarea", title);
+  }, [visible]);
 
   return (
     <div
@@ -69,6 +73,7 @@ const AddTask = ({ visible, hideModal, fechaTask, setFechaTask }) => {
         </div>
 
         <Form.Item
+          required
           label="Fecha de inicio y de fin"
           name="startDate"
           style={{ display: "inline-block" }}
@@ -76,7 +81,7 @@ const AddTask = ({ visible, hideModal, fechaTask, setFechaTask }) => {
           <RangePicker onChange={handleFechaChange} value={fechaTask} />
         </Form.Item>
 
-        <Form.Item label="Titulo" name="tarea">
+        <Form.Item label="Titulo" name="tarea" required>
           <Input />
         </Form.Item>
         <Form.Item label="Descripción" name="tareaDesc">

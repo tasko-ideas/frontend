@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Content } from "antd/es/layout/layout";
 import { Menu, Progress } from "antd";
 import { DashboardOutlined } from "@ant-design/icons";
 
 const ProyectosList = () => {
-  useEffect(() => {
-    document.title = "Tasko - Plan y Control - Calendario";
-  }, []);
   const Tableros = [
     { label: "Tablero1", key: "t1" },
     { label: "Tablero2", key: "t2" },
@@ -41,7 +38,6 @@ const ProyectosList = () => {
         justifyContent: "space-between",
         flexWrap: "wrap",
         position: "relative",
-        height: "100vh",
       }}
     >
       <Menu
@@ -50,14 +46,28 @@ const ProyectosList = () => {
         mode="inline"
         items={dashboard}
       />
-      <Progress
+      <div
         style={{
-          padding: "10px",
-          position: "sticky",
+          position: "fixed",
           bottom: "20px",
+          maxWidth: "200px",
+          display: "flex",
+          flexDirection: "column",
+          color: "black",
+          left: "1px",
         }}
-        percent={50}
-      />
+      >
+        <p style={{ padding: "0 10px" }}>Progreso</p>
+        <Progress
+          style={{
+            padding: "10px",
+            position: "fixed",
+            bottom: "7px",
+            maxWidth: "200px",
+          }}
+          percent={50}
+        />
+      </div>
     </Content>
     /* <ProyectoCard key={tablero.indexOf} nombre={tablero} /> */
   );

@@ -20,6 +20,7 @@ const ProyectosView = () => {
   ];
   const [fechaTask, setFechaTask] = useState(dayjs());
   const [view, setView] = useState("General");
+  const [titulo, setTitulo] = useState("");
   const { isShowing, toggle } = useModal();
   const { isShowing: addTask, toggle: toggleTask } = useModal();
   const query = useQuery({ queryKey: ["tareas"], queryFn: getTareas }, [
@@ -28,10 +29,17 @@ const ProyectosView = () => {
   const handleChange = (e) => {
     setView(e.target.value);
   };
+  console.log(titulo);
   return (
-    <Content>
+    <Content style={{ overflow: "scroll", height: "100vh" }}>
       <ViewSelector view={view} handleChange={handleChange} />
-      {view === "General" && <GeneralView />}
+      {query && view === "General" && (
+        <GeneralView
+          datos={query?.data?.data}
+          showTask={toggleTask}
+          setTitleValue={setTitulo}
+        />
+      )}
       {view === "Calendar" && (
         <CalendarView
           datos={query.data.data}
@@ -56,6 +64,7 @@ const ProyectosView = () => {
         items={items}
       />
       <AddTask
+        title={titulo}
         visible={addTask}
         hideModal={toggleTask}
         fechaTask={fechaTask}

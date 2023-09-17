@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardTarea = () => {
+const CardTarea = ({ title }) => {
   return (
     <div
       style={{
@@ -12,7 +12,7 @@ const CardTarea = () => {
         marginTop: "14px",
       }}
     >
-      {}
+      {title}
     </div>
   );
 };

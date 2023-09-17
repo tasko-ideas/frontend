@@ -2,18 +2,26 @@ import React from "react";
 import { Radio } from "antd";
 
 const ViewSelector = ({ view, handleChange }) => {
+  const vistas = [
+    "General",
+    "Calendar",
+    "Roadmap",
+    "Gantt",
+    "Kanban",
+    "Gráfico de rendimiento",
+  ];
   return (
-    <div style={{ margin: "10px auto", width: "70vw" }}>
+    <div style={{ margin: "10px 45px", width: "70vw" }}>
       <Radio.Group buttonStyle="solid" value={view} onChange={handleChange}>
-        <Radio.Button style={{ margin: "0 5px" }} value="General">
-          General
-        </Radio.Button>
-        <Radio.Button style={{ margin: "0 5px" }} value="Calendar">
-          Calendar
-        </Radio.Button>
-        <Radio.Button style={{ margin: "0 5px" }} value="Roadmap">
-          Roadmap
-        </Radio.Button>
+        {vistas.map((vista) => (
+          <Radio.Button
+            key={vistas.indexOf(vista)}
+            style={{ margin: "0 5px" }}
+            value={vista}
+          >
+            {vista}
+          </Radio.Button>
+        ))}
       </Radio.Group>
     </div>
   );

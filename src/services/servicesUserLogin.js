@@ -7,7 +7,7 @@ export async function loguear(loginData) {
   const json = JSON.stringify(loginData);
   const res = await axios.post(API_LOGIN, json, {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   });
   if (res.status !== 200) {
@@ -27,7 +27,7 @@ export async function signin(loginData) {
   const json = JSON.stringify(loginData);
   const res = await axios.post(`API-POST-SIGNIN`, json, {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   });
   if (res.status !== 200) {
@@ -39,7 +39,7 @@ export async function createUser(createUserData) {
   const json = JSON.stringify(createUserData);
   const res = await axios.post(API_REGISTER, json, {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   });
   console.log(res);
