@@ -111,3 +111,7 @@ li {
 .Prioritario {
   color: firebrick !important;
 }
+
+.tarea-boton:hover {
+  background-color: #3D8BF2 !important;
+}

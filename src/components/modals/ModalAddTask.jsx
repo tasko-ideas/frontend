@@ -1,10 +1,11 @@
 import { CloseOutlined } from "@ant-design/icons";
 // eslint-disable-next-line object-curly-newline
-import { Button, DatePicker, Form, Input, Select } from "antd";
+import { DatePicker, Form, Input, Select } from "antd";
 import { useForm } from "antd/es/form/Form";
 import React from "react";
 import { useMutation } from "@tanstack/react-query";
 import { setTareas } from "../../services/serviceTareas";
+import Buttons from "../Buttons";
 
 // eslint-disable-next-line object-curly-newline
 const AddTask = ({ visible, hideModal, fechaTask, setFechaTask }) => {
@@ -100,9 +101,7 @@ const AddTask = ({ visible, hideModal, fechaTask, setFechaTask }) => {
           />
         </Form.Item>
         <Form.Item style={{ display: "flex", justifyContent: "flex-end" }}>
-          <Button type="primary" htmlType="submit">
-            Agregar Tarea
-          </Button>
+          <Buttons label="Agregar tarea" htmlType="submit" />
         </Form.Item>
       </Form>
     </div>

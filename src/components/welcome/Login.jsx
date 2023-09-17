@@ -1,13 +1,51 @@
 /* eslint-disable no-underscore-dangle */
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useMutation } from "@tanstack/react-query";
-import { Button, Checkbox, ConfigProvider, Form, Input } from "antd";
-import React, { /* useEffect, */ useState } from "react";
+import {
+  Button, Checkbox, ConfigProvider, Form, Input, notification,
+} from "antd";
+import React, { useEffect, useState } from "react";
 import { loguear } from "../../services/servicesUserLogin";
-import { USER_LOGIN } from "../../constants/localStorageConstants";
+import { USER, USER_LOGIN } from "../../constants/localStorageConstants";
 
 const Login = ({ setLoading, setUser }) => {
+  const [form] = Form.useForm();
   const [saveUserLogin, setSaveUserLogin] = useState(false);
+
+  /*   {
+    "_id": "64e8d285951015d086eb1e18",
+    "fullname": "Arturo",
+    "email": "artur@mail.com",
+    "password": "",
+    "profileImageURL": "",
+    "projects": [],
+    "tasks": [],
+    "active": true,
+    "createdAt": "2023-08-25T16:10:45.757Z",
+    "updatedAt": "2023-08-25T16:10:45.757Z",
+    "__v": 0,
+    "calendar": {}
+} */
+  const openNotificationSuccess = (user) => {
+    notification.open({
+      message: "Logueado correctamente",
+      description: `Bienvenido ${user.fullname} `,
+      placement: 'topRight',
+      onClick: () => {
+        console.log("Login success!");
+      },
+    });
+  };
+  const openNotificationError = (err) => {
+    notification.open({
+      message: "Error en logueo",
+      description: `${err?.response?.data?.msg}`,
+      placement: "topRight",
+      onClick: () => {
+        console.log(err);
+      },
+    });
+  };
   /* const login = (e) => {
     e.preventDefault();
     /* setUser(true);
@@ -17,14 +55,23 @@ const Login = ({ setLoading, setUser }) => {
     mutationFn: loguear,
     onSuccess: (user) => {
       const dataUser = user.data._doc;
-      localStorage.setItem("USER", JSON.stringify(dataUser));
+      localStorage.setItem(USER, JSON.stringify(dataUser));
+      console.log(dataUser);
+      openNotificationSuccess(dataUser);
       setUser(dataUser);
       setLoading(true);
     },
     onError: (err) => {
+      openNotificationError(err);
       console.error(err);
     },
   });
+  useEffect(() => {
+    const loginData = JSON.parse(localStorage.getItem(USER_LOGIN));
+    if (loginData) {
+      logueo.mutate(loginData);
+    }
+  }, []);
 
   const handlerCheck = () => {
     setSaveUserLogin(!saveUserLogin);
@@ -32,7 +79,6 @@ const Login = ({ setLoading, setUser }) => {
   // agregar useEffect para recuperar info del login si existe
   /* useEffect(() => {
   }) */
-  const [form] = Form.useForm();
   const onFinish = (loginData) => {
     console.log("Received values of form: ", loginData);
     if (saveUserLogin) {
@@ -62,12 +108,12 @@ const Login = ({ setLoading, setUser }) => {
         ]}
       >
         <Input
-          prefix={
+          prefix={(
             <UserOutlined
               style={{ color: "rgb(0,100,255)" }}
               className="site-form-item-icon"
             />
-          }
+          )}
           placeholder="E-mail"
           autoFocus
         />
@@ -82,12 +128,12 @@ const Login = ({ setLoading, setUser }) => {
         ]}
       >
         <Input.Password
-          prefix={
+          prefix={(
             <LockOutlined
               style={{ color: "rgb(0,100,255)" }}
               className="site-form-item-icon"
             />
-          }
+          )}
           placeholder="Password"
           type="password"
           autoFocus

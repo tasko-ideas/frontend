@@ -3,10 +3,12 @@ import { Menu } from "antd";
 
 import React from "react";
 import User from "./User";
+import { USER_LOGIN } from "../../constants/localStorageConstants";
 
 function Navbar({ user, setUser }) {
   const handleclick = () => {
     setUser(!user);
+    localStorage.removeItem(USER_LOGIN);
   };
 
   const items2 = [

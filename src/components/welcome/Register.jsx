@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { Button, ConfigProvider, Form, Input } from "antd";
-import { createUser } from "../../services/servicesUserLogin";
+import {
+  Button,
+  ConfigProvider,
+  Form,
+  Input,
+  notification,
+} from "antd";
 import { LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
+import { createUser } from "../../services/servicesUserLogin";
 /* import Users from "../../services/servicesUserLogin"; */
 
 const formItemLayout = {
@@ -35,14 +41,37 @@ const tailFormItemLayout = {
     },
   },
 };
-const Register = () => {
+const Register = ({ setTab }) => {
   const [form] = Form.useForm();
+  const openNotificationSuccess = (user) => {
+    notification.open({
+      message: "Usuario creado correctamente",
+      description: `${user?.data?.fullname}, ${user?.data?.email} `,
+      placement: "topRight",
+      onClick: () => {
+        console.log("Login success!");
+      },
+    });
+  };
+  const openNotificationError = (err) => {
+    notification.open({
+      message: "Error en logueo",
+      description: `${err?.response?.data}`,
+      placement: "topRight",
+      onClick: () => {
+        console.log(err);
+      },
+    });
+  };
   const registrar = useMutation({
     mutationFn: createUser,
     onSuccess: (user) => {
+      openNotificationSuccess(user);
+      setTab();
       console.log(user);
     },
     onError: (err) => {
+      openNotificationError(err);
       console.error(err);
     },
   });
@@ -58,7 +87,7 @@ const Register = () => {
       name="register"
       onFinish={onFinish}
       initialValues={{
-        residence: ["zhejiang", "hangzhou", "xihu"],
+        /* residence: ["zhejiang", "hangzhou", "xihu"], */
         prefix: "86",
       }}
       style={{
@@ -79,12 +108,12 @@ const Register = () => {
       >
         <Input
           placeholder="Fullname"
-          prefix={
+          prefix={(
             <UserOutlined
               style={{ color: "rgb(0,100,255)" }}
               className="site-form-item-icon"
             />
-          }
+          )}
         />
       </Form.Item>
 
@@ -102,12 +131,12 @@ const Register = () => {
         ]}
       >
         <Input
-          prefix={
+          prefix={(
             <MailOutlined
               style={{ color: "rgb(0,100,255)" }}
               className="site-form-item-icon"
             />
-          }
+          )}
           placeholder="E-mail"
         />
       </Form.Item>
@@ -123,12 +152,13 @@ const Register = () => {
         hasFeedback
       >
         <Input.Password
-          prefix={
+          prefix={(
             <LockOutlined
               style={{ color: "rgb(0,100,255)" }}
               className="site-form-item-icon"
             />
-          }
+          )}
+          minlength="8"
           placeholder="Password"
         />
       </Form.Item>
@@ -148,19 +178,20 @@ const Register = () => {
                 return Promise.resolve();
               }
               return Promise.reject(
-                new Error("The new password that you entered do not match!")
+                new Error("The new password that you entered do not match!"),
               );
             },
           }),
         ]}
       >
         <Input.Password
-          prefix={
+          prefix={(
             <LockOutlined
               style={{ color: "rgb(0,100,255)" }}
               className="site-form-item-icon"
             />
-          }
+          )}
+          minlength="8"
           placeholder="Password"
         />
       </Form.Item>
