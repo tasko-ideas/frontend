@@ -7,7 +7,7 @@ const Buttons = ({ label, htmlType, onClick }) => {
       type="primary"
       style={{
         margin: "10px 0",
-        width: "130px",
+        minWidth: "130px",
         minHeight: "37px",
         borderRadius: "5px",
         boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",

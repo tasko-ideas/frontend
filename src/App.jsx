@@ -14,11 +14,16 @@ import ProyectosList from "./components/ProyectosList";
 import Loading from "./components/Loading";
 import Welcome from "./components/welcome/Welcome";
 import ProyectosView from "./components/Views/ProyectosView";
+import ModalInfo from "./components/modals/ModalInfo";
+import AddProject from "./components/modals/ModalAddProject";
 
 function App() {
   const queryClient = new QueryClient();
+  const usuario = JSON.parse(localStorage.getItem("USER"));
   const [user, setUser] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [proyectos, setProyectos] = useState([]);
+  const [visibilidad, setVisibilidad] = useState(true);
 
   // revisar documentacion de persistentQueryClient: https://tanstack.com/query/v4/docs/react/plugins/createSyncStoragePersister#serialize-and-deserialize-options
   /* {
@@ -34,6 +39,9 @@ function App() {
     maxAge: Infinity,
   });
  */
+  const handleVisibilidad = () => {
+    setVisibilidad(!visibilidad);
+  };
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -57,7 +65,7 @@ function App() {
                   height: "48px",
                 }}
               >
-                <Navbar user={user} setUser={setUser} />
+                <Navbar user={user} usuario={usuario} setUser={setUser} />
               </Header>
               <Layout hasSider>
                 {loading ? (
@@ -77,6 +85,12 @@ function App() {
                       <RightOutlined />
                     </Sider>
                     <ProyectosView />
+                    {proyectos.length === 0 && visibilidad && (
+                      <ModalInfo setVisibilidad={handleVisibilidad} />
+                    )}
+                    {!visibilidad && (
+                      <AddProject hideModal={handleVisibilidad} />
+                    )}
                   </>
                 )}
               </Layout>

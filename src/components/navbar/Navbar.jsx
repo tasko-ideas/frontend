@@ -5,7 +5,7 @@ import React from "react";
 import User from "./User";
 import { USER_LOGIN } from "../../constants/localStorageConstants";
 
-function Navbar({ user, setUser }) {
+function Navbar({ user, setUser, usuario }) {
   const handleclick = () => {
     setUser(!user);
     localStorage.removeItem(USER_LOGIN);
@@ -17,7 +17,7 @@ function Navbar({ user, setUser }) {
       key: "notification",
     },
     {
-      label: <User />,
+      label: <User usuario={usuario} />,
       key: "user",
       children: [
         {

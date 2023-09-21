@@ -6,7 +6,6 @@ export function getTareas() {
   return axios.get("http://localhost:3000/tareas");
 }
 export function setTareas(form) {
-  console.log(form);
   const Titulo = form.getFieldValue("tarea");
   const fechaInicio = dayjs(form.getFieldValue("startDate")[0]).format(
     "YYYY-MM-DD"

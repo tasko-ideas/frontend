@@ -1,7 +1,7 @@
 {
   "name": "tasko",
   "eslintConfig": {
-    "extends": "airbnb"
+    "extends": "standard"
   },
   "private": true,
   "version": "0.0.0",

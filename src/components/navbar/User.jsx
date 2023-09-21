@@ -1,6 +1,6 @@
 import React from "react";
 
-const User = () => {
+const User = ({ usuario }) => {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
       <img
@@ -9,7 +9,7 @@ const User = () => {
         alt="avatar"
         style={{ border: "1px solid grey", borderRadius: "100%" }}
       />
-      Rafael Ricardo Strongoli
+      {usuario.fullname}
     </div>
   );
 };
