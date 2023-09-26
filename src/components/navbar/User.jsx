@@ -9,7 +9,7 @@ const User = ({ usuario }) => {
         alt="avatar"
         style={{ border: "1px solid grey", borderRadius: "100%" }}
       />
-      {usuario.fullname}
+      Nombre
     </div>
   );
 };
